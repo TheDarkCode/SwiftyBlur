@@ -70,14 +70,12 @@ class ViewController: UIViewController {
                 animations: { () -> Void in
                     
                     self.topMenu.superview?.layoutIfNeeded()
-                    (self.view as? AnimatableView)?.squeezeInDown { (self.view as? AnimatableView)?.shake() { (self.view as? AnimatableView)?.flipY {} }}
+                    (self.topMenu as? AnimatableImageView)?.squeezeInDown { (self.topMenu as? AnimatableImageView)?.shake() { (self.topMenu as? AnimatableImageView)?.flipY {} }}
                     self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)
         
             }, completion: nil)
             
         }
-        
-        (self.topMenu as? AnimatableImageView)?.squeezeInDown { (self.topMenu as? AnimatableImageView)?.shake() { (self.topMenu as? AnimatableImageView)?.flipY {} }}
         
         print(String(time))
     }
