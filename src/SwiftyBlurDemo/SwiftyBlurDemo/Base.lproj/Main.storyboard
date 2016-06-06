@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oLx-w9-0wk">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="mpL-pr-Tm9">
+            <objects>
+                <viewController id="oLx-w9-0wk" customClass="ViewController" customModule="SwiftyBlurDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gMh-2f-JKU"/>
+                        <viewControllerLayoutGuide type="bottom" id="woF-Ow-26o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sg7-yY-42f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopMenu" translatesAutoresizingMaskIntoConstraints="NO" id="jlh-cB-VYa">
+                                <rect key="frame" x="141" y="0.0" width="319" height="301"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="bpV-pX-eyi"/>
+                                    <constraint firstAttribute="height" constant="301" id="cki-wV-V2Q"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5S-Gc-Bp9">
+                                <rect key="frame" x="16" y="550" width="568" height="30"/>
+                                <state key="normal" title="Toggle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="move:" destination="oLx-w9-0wk" eventType="touchUpInside" id="uRV-Zy-5cQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="woF-Ow-26o" firstAttribute="top" secondItem="e5S-Gc-Bp9" secondAttribute="bottom" constant="20" id="eoz-K3-VDF"/>
+                            <constraint firstItem="jlh-cB-VYa" firstAttribute="bottom" secondItem="gMh-2f-JKU" secondAttribute="bottom" priority="998" constant="-20" id="hFB-Nu-tR1"/>
+                            <constraint firstAttribute="centerX" secondItem="jlh-cB-VYa" secondAttribute="centerX" id="lA8-jx-dcj"/>
+                            <constraint firstItem="e5S-Gc-Bp9" firstAttribute="leading" secondItem="sg7-yY-42f" secondAttribute="leadingMargin" id="uym-XG-GGX"/>
+                            <constraint firstItem="e5S-Gc-Bp9" firstAttribute="trailing" secondItem="sg7-yY-42f" secondAttribute="trailingMargin" id="vZ8-PW-9Ad"/>
+                            <constraint firstItem="jlh-cB-VYa" firstAttribute="top" secondItem="gMh-2f-JKU" secondAttribute="bottom" priority="999" constant="-20" id="yw8-2L-1ez"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="toggleButton" destination="e5S-Gc-Bp9" id="wML-fc-upw"/>
+                        <outlet property="topMenu" destination="jlh-cB-VYa" id="1tR-yJ-PTZ"/>
+                        <outlet property="topMenuHiddenConstraint" destination="hFB-Nu-tR1" id="wli-AD-agE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8h-Sy-B6M" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="318"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="TopMenu" width="639" height="603"/>
+    </resources>
+</document>
