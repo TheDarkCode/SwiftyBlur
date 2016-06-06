@@ -18,6 +18,8 @@
 		4D3B84621D052FDA00E123F6 /* UIViewMotionBlurExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B845F1D052FDA00E123F6 /* UIViewMotionBlurExtension.swift */; };
 		4D3B84631D052FDA00E123F6 /* SwiftyBlurFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B84601D052FDA00E123F6 /* SwiftyBlurFilter.swift */; };
 		4D3B84641D052FDA00E123F6 /* CIFilterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B84611D052FDA00E123F6 /* CIFilterExtensions.swift */; };
+		4D3B84671D05397900E123F6 /* DelayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B84661D05397900E123F6 /* DelayExtensions.swift */; };
+		4D3B84691D053AEE00E123F6 /* PerformanceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B84681D053AEE00E123F6 /* PerformanceUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		4D3B845F1D052FDA00E123F6 /* UIViewMotionBlurExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewMotionBlurExtension.swift; sourceTree = "<group>"; };
 		4D3B84601D052FDA00E123F6 /* SwiftyBlurFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyBlurFilter.swift; sourceTree = "<group>"; };
 		4D3B84611D052FDA00E123F6 /* CIFilterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIFilterExtensions.swift; sourceTree = "<group>"; };
+		4D3B84661D05397900E123F6 /* DelayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayExtensions.swift; sourceTree = "<group>"; };
+		4D3B84681D053AEE00E123F6 /* PerformanceUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		4D3B842D1D052FBD00E123F6 /* SwiftyBlurDemo */ = {
 			isa = PBXGroup;
 			children = (
+				4D3B846A1D053AF900E123F6 /* Utils */,
 				4D3B84651D052FDD00E123F6 /* SwiftyBlur */,
 				4D3B842E1D052FBD00E123F6 /* AppDelegate.swift */,
 				4D3B84301D052FBD00E123F6 /* ViewController.swift */,
@@ -143,6 +148,15 @@
 				4D3B84611D052FDA00E123F6 /* CIFilterExtensions.swift */,
 			);
 			name = SwiftyBlur;
+			sourceTree = "<group>";
+		};
+		4D3B846A1D053AF900E123F6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4D3B84661D05397900E123F6 /* DelayExtensions.swift */,
+				4D3B84681D053AEE00E123F6 /* PerformanceUtils.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3B84671D05397900E123F6 /* DelayExtensions.swift in Sources */,
 				4D3B84631D052FDA00E123F6 /* SwiftyBlurFilter.swift in Sources */,
 				4D3B84641D052FDA00E123F6 /* CIFilterExtensions.swift in Sources */,
 				4D3B84371D052FBD00E123F6 /* SwiftyBlurDemo.xcdatamodeld in Sources */,
+				4D3B84691D053AEE00E123F6 /* PerformanceUtils.swift in Sources */,
 				4D3B84311D052FBD00E123F6 /* ViewController.swift in Sources */,
 				4D3B842F1D052FBD00E123F6 /* AppDelegate.swift in Sources */,
 				4D3B84621D052FDA00E123F6 /* UIViewMotionBlurExtension.swift in Sources */,

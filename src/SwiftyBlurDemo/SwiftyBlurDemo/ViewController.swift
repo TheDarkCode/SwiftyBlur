@@ -36,30 +36,40 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        weak var weakSelf = self
-        self.topMenu.enableMotionBlur(Float(M_PI_2)) {
-            let strongSelf = weakSelf
-            strongSelf?.toggleButton.setTitle("Toggle", forState: .Normal)
-            strongSelf?.toggleButton.enabled = true
+        let time = calculateTime {
+            
+            self.topMenu.enableMotionBlur(Float(M_PI_2)) {
+                self.delay(0) {
+                    let strongSelf = self
+                    strongSelf.toggleButton?.setTitle("Toggle", forState: .Normal)
+                    strongSelf.toggleButton?.enabled = true
+                }
+            }
         }
+        print(String(time))
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         
-        topMenu.disableMotionBlur()
+        let time = calculateTime { self.topMenu.disableMotionBlur() }
+        
+        print(String(time))
     }
     
     @IBAction func move(sender: AnyObject) {
-        strongTopMenuHiddenConstraint.active = !strongTopMenuHiddenConstraint.active
+        let time = calculateTime {
+            self.strongTopMenuHiddenConstraint.active = !self.strongTopMenuHiddenConstraint.active
+            
+            let hiding = self.strongTopMenuHiddenConstraint.active
+            
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: hiding ? 0 : 0.6, options: [.AllowUserInteraction, .BeginFromCurrentState], animations: { () -> Void in
+                self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)
+                self.topMenu.superview?.layoutIfNeeded()
+                }, completion: nil)
+        }
         
-        let hiding = strongTopMenuHiddenConstraint.active
-        
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: hiding ? 0 : 0.6, options: [.AllowUserInteraction, .BeginFromCurrentState], animations: { () -> Void in
-            self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)
-            self.topMenu.superview?.layoutIfNeeded()
-            }, completion: nil)
+        print(String(time))
     }
 
 }
