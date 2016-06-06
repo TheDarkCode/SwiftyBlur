@@ -63,11 +63,21 @@ class ViewController: UIViewController {
             
             let hiding = self.strongTopMenuHiddenConstraint.active
             
-            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: hiding ? 0 : 0.6, options: [.AllowUserInteraction, .BeginFromCurrentState], animations: { () -> Void in
-                self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)
-                self.topMenu.superview?.layoutIfNeeded()
-                }, completion: nil)
+            UIView.animateWithDuration(0.5, delay: 0,
+                usingSpringWithDamping: 0.8,
+                initialSpringVelocity: hiding ? 0 : 0.6,
+                options: [.AllowUserInteraction, .BeginFromCurrentState],
+                animations: { () -> Void in
+                    
+                    self.topMenu.superview?.layoutIfNeeded()
+                    (self.view as? AnimatableView)?.squeezeInDown { (self.view as? AnimatableView)?.shake() { (self.view as? AnimatableView)?.flipY {} }}
+                    self.view.backgroundColor = hiding ? UIColor(white: 0.907, alpha: 1) : UIColor(white: 0.8, alpha: 1)
+        
+            }, completion: nil)
+            
         }
+        
+        (self.topMenu as? AnimatableImageView)?.squeezeInDown { (self.topMenu as? AnimatableImageView)?.shake() { (self.topMenu as? AnimatableImageView)?.flipY {} }}
         
         print(String(time))
     }
